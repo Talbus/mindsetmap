@@ -22,17 +22,17 @@ const App = props => {
 			<div>
 				<div className='navBar'>
 					<div style={{ width: '15%' }} />
-					<Link to='/' style={{ fontSize: '32px', color: '#BEF9F3', textDecoration: 'none', width: '38%', fontWeight: '400' }}>Mindset Map</Link>
-					<div style={{ width: '37%', display: 'flex', justifyContent: 'space-around' }}>
+					<Link to='/' onClick={() => window.scrollTo(0, 0)} style={{ fontSize: '32px', color: '#BEF9F3', textDecoration: 'none', width: '38%', fontWeight: '400' }}>Mindset Map</Link>
+					<div className='navLinks' style={{ width: '37%', display: 'flex', justifyContent: 'space-around' }}>
 						<div style={{ width: '10%' }}></div>
 						<Link to='/mapper' className='navBarItems' style={{ width: '30%' }}>
-							<p className='navBarItems' style={{ height: '100%', width: '30%', fontSize: '20px', fontWeight: '400' }}>Mapper</p>
+							<p className='' style={{ height: '100%', width: '30%', fontSize: '20px', fontWeight: '400' }}>Mapper</p>
 						</Link>
 						<Link to='/mapper' className='navBarItems' style={{ width: '30%' }}>
-							<p className='navBarItems' style={{ height: '100%', width: '30%', fontSize: '20px', fontWeight: '400' }}>About</p>
+							<p className='' style={{ height: '100%', width: '30%', fontSize: '20px', fontWeight: '400' }}>About</p>
 						</Link>
 						<Link to='/mapper' className='navBarItems' style={{ width: '30%' }}>
-							<p className='navBarItems' style={{ height: '100%', width: '30%', fontSize: '20px', fontWeight: '400' }}>Contact</p>
+							<p className='' style={{ height: '100%', width: '30%', fontSize: '20px', fontWeight: '400' }}>Contact</p>
 						</Link>
 					</div>
 					<div style={{ width: '10%' }} />

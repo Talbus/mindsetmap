@@ -13,7 +13,7 @@ function Mapper() {
     const resp = useSelector(state => state.response);
 
     return (
-        <div className='' style={{ width: '100%', marginTop: '50px' }}>
+        <div className='' style={{ width: '100%', marginTop: '50px', marginBottom: '50px' }}>
             
             <button onClick={() => dispatch(showSurvey())}>switch</button>
             <div className='content'>

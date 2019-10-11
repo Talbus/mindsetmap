@@ -10,7 +10,7 @@ body {
 	font-style: normal;  */
 	background-color: #F5FCF9;
 	background-color: white !important;
-	padding-bottom: 100px;
+	/* padding-bottom: 100px; */
 	margin-top: 70px;
 	scroll-behavior: smooth;
 }
@@ -41,10 +41,12 @@ button {
 	/* background-color: #9AEFDE; */
 	background-color: #187764;
 	width: 100vw;
-	height: 100%;
+	min-height: 100vh;
+	background-size: cover;
 	display: flex;
 	flex-direction: row;
-	padding-bottom: 200px;
+	overflow: hidden;
+	/* padding-bottom: 200px; */
 }
 
 .aboutBackground {
@@ -79,13 +81,20 @@ button {
 .navBarItems {
 	text-decoration: none;
 	color: #BEF9F3;
-	border-bottom-style: solid;
-	border-width: 0;
+	/* border-bottom-style: solid; */
+	/* border-width: 0; */
+	-webkit-transition: opacity 200ms linear;
+    -ms-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
 }
 
-.navBarItems:hover {
+.navLinks:hover > .navBarItems {
+	opacity: .6;
+}
+
+.navLinks:hover > .navBarItems:hover {
+	opacity: 1;
 	color: #DFFCF6;
-	border-width: 1px;
 }
 
 .pageHeader {
