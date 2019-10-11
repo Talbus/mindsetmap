@@ -3,7 +3,9 @@ import './App.css';
 import Survey from './components/Survey';
 import Mapper from './components/Mapper';
 import Home from './components/Home';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Link, Switch } from "react-router-dom";
+
 
 const App = props => {
 
@@ -18,7 +20,7 @@ const App = props => {
 	// const navBarClass = 
 
 	return (
-		<Router>
+		<Router basename='/'>
 			<div>
 				<div className='navBar'>
 					<div style={{ width: '15%' }} />
