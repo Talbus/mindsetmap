@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 // import './App.css';
 import Select from 'react-select';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,6 +8,9 @@ import Associations from './Associations';
 function Survey(props) {
 
     // console.log(props);
+    useEffect(() => {
+        window.scrollTo(0,0);
+    });
     const [selected, setSelected] = useState(0);
     const [responseText, setResponse] = useState('');
     const [example, setExample] = useState(0);
@@ -20,7 +23,10 @@ function Survey(props) {
 
     const dispatch = useDispatch();
 
-    const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   
+    // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
+    const scrollToRef = (ref) => window.scrollTo(0, document.body.scrollHeight - 100);
+    // window.scrollTo(0,document.body.scrollHeight);
+    
     const myRef = useRef(null)
     const backUpRef = useRef(null);
 
@@ -118,7 +124,7 @@ function Survey(props) {
     }
 
     const nextButton = <button onClick={nextPage} style={{ marginTop: '36px' }} className='nextButton primaryButton appButton blueColor'>Next</button>;
-    const backUpButton = <button style={{ marginTop: '36px', marginRight: '12px' }} className='appButton backUpButton' onClick={() => scrollToRef(backUpRef)}>Try again</button>
+    const backUpButton = <button style={{ marginTop: '36px', marginRight: '12px' }} className='appButton backUpButton' onClick={() => window.scrollTo(0, 0)}>Try again</button>
 
     const textArea = selected === 0 ? 'responseField cursorNotAllowed' : 'responseField';
     // changing the cursor when they shouldn't type
@@ -169,9 +175,9 @@ function Survey(props) {
 
                 <div className='surveyArea'>
                     <h2 className='pageHeader'>Mapper</h2>
-                    <h3 style={{ margin: '0', fontSize: '18px', width: '80%', fontWeight: '400', color: '#212934' }}>Choose a question from the dropdown and answer with a few sentences.</h3>
+                    <h3 style={{ margin: '0', fontSize: '18px', width: '100%', fontWeight: '400', color: '#212934' }}>Choose a question from the dropdown and answer with a few sentences.</h3>
                     <h3 style={{ margin: '0', fontSize: '16px', width: '80%', fontWeight: '400', color: '#404B5A', marginTop: '4px' }}>Alternatively, try one of our example responses.</h3>
-                    <h4 style={{ margin: '15px 0 20px 0', fontSize: '14px', color: '#404B5A', fontWeight: '300' }}>Press <span style={{ color: '#06603F', fontWeight: '400' }}>Map it</span> when you're finished!</h4>
+                    <h4 style={{ margin: '15px 0 20px 0', fontSize: '14px', color: '#404B5A', fontWeight: '400' }}>Press <span style={{ color: '#0F5C4D', fontWeight: '700', letterSpacing: '.5px' }}>Map it</span> when you're finished!</h4>
                     <div className='dropdown'>
                         <Select
                             // isClearable={true}
@@ -222,7 +228,7 @@ function Survey(props) {
                             </div>
                         </div>
                         <div style={{ width: '25%', display: 'flex', justifyContent: 'flex-end' }}>
-                            <button ref={myRef} className='clearButton' onClick={() => exampleChange(example)}>See an example</button>
+                            <button className='clearButton' onClick={() => exampleChange(example)}>See an example</button>
                         </div>
                     </div>
 
@@ -238,10 +244,10 @@ function Survey(props) {
                     {/* </div> */}
                     {/* <h1>{selected.label}</h1> */}
 
-                    {(resp.response ? console.log(resp.response[0].payload) : ' ')}
+                    {/* {(resp.response ? console.log(resp.response[0].payload) : ' ')} */}
                     {/* {resp.response ? resp.response[0].payload : ''} */}
                     {/* {resp.response ? <Associations /> : ''} */}
-                    {seeAssociations && resp.response ? <Associations /> : ''}
+                    {seeAssociations && resp.response ? <Associations /> : <div style={{ height: '300px' }} />}
                     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                         {seeAssociations && resp.response ? backUpButton : ''}
                         {seeAssociations && resp.response ? nextButton : ''}

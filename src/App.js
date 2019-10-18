@@ -3,21 +3,13 @@ import './App.css';
 import Survey from './components/Survey';
 import Mapper from './components/Mapper';
 import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
 // import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { HashRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 
 const App = props => {
-
-	// const handleChange = (selectedQuestion) => {
-	// 	this.setState({ selectedQuestion });
-	// 	console.log(`Option selected:`, selectedQuestion);
-	// };
-	const pushRoute = () => {
-		// history.push('/');
-	}
-
-	// const navBarClass = 
 
 	return (
 		<Router basename='/'>
@@ -30,22 +22,24 @@ const App = props => {
 						<Link to='/mapper' className='navBarItems' style={{ width: '30%' }}>
 							<p className='' style={{ height: '100%', width: '30%', fontSize: '20px', fontWeight: '400' }}>Mapper</p>
 						</Link>
-						<Link to='/mapper' className='navBarItems' style={{ width: '30%' }}>
+						<Link to='/about' className='navBarItems' style={{ width: '30%' }}>
 							<p className='' style={{ height: '100%', width: '30%', fontSize: '20px', fontWeight: '400' }}>About</p>
 						</Link>
-						<Link to='/mapper' className='navBarItems' style={{ width: '30%' }}>
+						<Link to='/contact' className='navBarItems' style={{ width: '30%' }}>
 							<p className='' style={{ height: '100%', width: '30%', fontSize: '20px', fontWeight: '400' }}>Contact</p>
 						</Link>
 					</div>
 					<div style={{ width: '10%' }} />
 					{/* <button onClick={pushRoute}>go home</button> */}
 				</div>
-					<Route path='/' exact component={Home} />
-					<div style={{ display: 'flex', width: '100%' }}>
-						<div style={{ width: '15%' }} />
-						<Route path='/mapper' component={Mapper} />
-						<div style={{ width: '15%' }} />
-					</div>
+				<Route path='/' exact component={Home} />
+				<Route path='/about' component={About} />
+				<Route path='/contact' component={Contact} />
+				<div style={{ display: 'flex', width: '100%', backgroundColor: 'white' }}>
+					<div style={{ width: '15%' }} />
+					<Route path='/mapper' component={Mapper} />
+					<div style={{ width: '15%' }} />
+				</div>
 			</div>
 		</Router>
 	);
