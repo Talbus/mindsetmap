@@ -41,9 +41,9 @@ function Home() {
                 </div>
                 {/* <Link to='/mapper' style={{ width: '30%', height: '300px', display: 'flex', justifyContent: 'flexStart', alignItems: 'flexEnd', flexDirection: 'column', textDecoration: 'none' }}> */}
                 {/* <Link to='/mapper' style={{ width: '30%', height: '300px', display: 'flex', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'column', textDecoration: 'none' }}> */}
-                <Link to='/mapper' style={{ width: '30%', marginTop: '0px', height: '300px', display: 'flex', justifyContent: '', alignItems: 'center', flexDirection: 'column', textDecoration: 'none' }}>
+                <Link to='/mapper' style={{ width: '20%', marginTop: '0px', height: '350px', display: 'flex', justifyContent: '', alignItems: '', flexDirection: 'column', textDecoration: 'none' }}>
                     {/* <img src={imgSrc} className='arrowImage' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} style={{ width: '40%', marginTop: '' }} /> */}
-                    <div style={{ position: 'relative', width: '40%', height: '250px', display: 'flex', justifyContent: 'flex-end', flexDirection: 'column' }}>
+                    <div style={{ position: 'relative', width: '90%', height: '300px', display: 'flex', justifyContent: 'flex-end', flexDirection: 'column' }}>
                         <img src={sidearrow} className='arrowImage' style={{ width: '100%', marginTop: '', position: 'absolute', left: '0', zIndex: '2' }} />
                         <img src={sidearrow2} className='arrowImageTwo' style={{ width: '100%', marginTop: '', position: 'absolute', left: '0' }} />
                     </div>
@@ -52,6 +52,7 @@ function Home() {
                     </div>
                     {/* <p style={{ color: '#FFF3D6', fontSize: '16px', fontWeight: '600', letterSpacing: '.5px' }} className='homeExplore'>Explore your mindset</p> */}
                 </Link>
+                <div style={{ width: '10%' }} />
             </div>
         </div>
     );
