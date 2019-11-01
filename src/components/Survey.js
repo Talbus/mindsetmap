@@ -9,7 +9,7 @@ function Survey(props) {
 
     // console.log(props);
     useEffect(() => {
-        window.scrollTo(0,0);
+        // window.scrollTo(0,0);
     });
     const [selected, setSelected] = useState(0);
     const [responseText, setResponse] = useState('');
@@ -32,9 +32,10 @@ function Survey(props) {
 
 	const handleChange = (selectedValue) => {
         setSelected(selectedValue);
-        dispatch(question(selectedValue));
-        console.log(`Option selected:`, selected);
-        console.log(selectedValue);
+        dispatch(question(selectedValue.value));
+        // console.log(ques, 'ques');
+        // console.log(`Option selected:`, selected);
+        // console.log(selectedValue.value, 'selval');
         // console.log(ques.response[0].payload);
     };
 
@@ -88,6 +89,7 @@ function Survey(props) {
         // 	none of react-select's styles are passed to <Control />
             ...base,
             height: 50,
+            fontSize: '14px',
             boxShadow: 'inset 0 2px 2px hsla(0, 0%, 0%, 0.1), 0 -2px 0 hsla(0, 0%, 100%, .15)',
             // backgroundColor: '#F5FCF9',
             backgroundColor: 'white',
@@ -133,6 +135,21 @@ function Survey(props) {
         'This person is curious about the world in a way like no other, and sets out to learn for the sake of learning, not just to study for a test.',
         'I would describe them as intelligent, because they can articulate their thoughts quickly and eloquently. In addition, they seemingly grasp concepts and are able to apply them so readily.'
     ]
+    
+    const examples_yourself = [
+        "I do think of myself as intelligent. When learning math and other subjects requiring graphs and numbers, I tend to pick up the concepts relatively quickly. I become comfortable with new information quickly and it really makes sense to me.",
+        "I like to believe that I am an intelligent person. I feel this way not just because of my grades in school or my position as a student at my university, but also because of the passion and effort I put into my endeavors. I have always had a strong desire to learn about the world around me, which drives me to explore topics out of my comfort zone.",
+    ]
+
+    const examples_level = [
+        "In high school, I was in honors math class and received nearly 100s on all of the tests. When taking the tests, I would see the question and just know immediately how to answer it - the answer set would just flow naturally from me, rather than me struggling for a long time to eventually figure it out.",
+        "Hard work! (usually correlated with time, but not necessarily) People gain intelligence as they go through experiences. That's why in many cultures the elderly is admired -- because they've gone through many difficult situations and acquired knowledge that helps them make better choices.",
+    ]
+
+    const examples_someone = [
+        "This person is curious about the world in a way like no other, and sets out to learn for the sake of learning, not just to study for a test.",
+        "I would describe them as intelligent, because they can articulate their thoughts quickly and eloquently. In addition, they seemingly grasp concepts and are able to apply them so readily.",
+    ]
 
     const milestones = [
         { message: 'Write some more!', color: 'gold' },
@@ -176,7 +193,7 @@ function Survey(props) {
                 <div className='surveyArea'>
                     <h2 className='pageHeader'>Mapper</h2>
                     <h3 style={{ margin: '0', fontSize: '18px', width: '100%', fontWeight: '400', color: '#212934' }}>Choose a question from the dropdown and answer with a few sentences.</h3>
-                    <h3 style={{ margin: '0', fontSize: '16px', width: '80%', fontWeight: '400', color: '#404B5A', marginTop: '4px' }}>Alternatively, try one of our example responses.</h3>
+                    <h3 style={{ margin: '0', fontSize: '16px', width: '100%', fontWeight: '400', color: '#404B5A', marginTop: '4px' }}>Alternatively, try one of our example responses.</h3>
                     <h4 style={{ margin: '15px 0 20px 0', fontSize: '14px', color: '#404B5A', fontWeight: '400' }}>Press <span style={{ color: '#0F5C4D', fontWeight: '700', letterSpacing: '.5px' }}>Map it</span> when you're finished!</h4>
                     <div className='dropdown'>
                         <Select
@@ -189,10 +206,20 @@ function Survey(props) {
                             onChange={handleChange}
                             options={options}
                             label='Single select'
-                            placeholder='Choose a question'
+                            // placeholder='Choose a question'
+                            // placeholder={options[0].label}
+                            placeholder={ques.response ? options[ques.response[0].payload].label : 'Choose a question'}
+                            // placeholder={options[ques.response[0].payload].label}
                             isSearchable='false'
                             defaultValue={options[0]}>
                         </Select>
+                    </div>
+                    <div className='displayQuestion'>
+                        <div style={{ width: '10%' }} />
+                        <p style={{ margin: '0', color: '#063C31', width: '80%' }}>
+                            {selected ? selected.label : ''}
+                        </p>
+                        <div style={{ width: '10%' }} />
                     </div>
                     <textarea
                         rows='4'
@@ -202,7 +229,7 @@ function Survey(props) {
                         // value={responseText}
                         value={resp.response ? resp.response[0].payload : ''}
                         readOnly={blockTyping}
-                        style={{ backgroundColor: 'red' }}
+                        style={{ backgroundColor: '' }}
                     />
                     <div className='textButtonsDiv'>
                         <div style={{ width: '25%' }}>

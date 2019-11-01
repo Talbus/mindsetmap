@@ -32,7 +32,7 @@ function Results() {
                 <p style={{ color: '#063C31', width: '90%', margin: '0' }}>{fixedTerms.response ? (secondIntroText) : ''}</p>
                 {fixedTerms.response ? fixedString : ''}
             <p style={{ fontSize: '16px', width: '90%', marginTop: '0', color: '#404B5A', lineHeight: '1.25' }}>
-                To learn more about what these results mean, visit our <Link to='/about' className='links'>About</Link> page, and if you're interested in speaking to us more, do not hesitate to <Link to='/' className='links'>reach out</Link>!<br /><br />Go back to the mapper <span className='links' onClick={() => dispatch(showSurvey())}>here</span>.
+                To learn more about what these results mean, visit our <Link to='/about' className='links'>About</Link> page, and if you're interested in speaking to us more, do not hesitate to <Link to='/contact' className='links'>reach out</Link>!<br /><br />Go back to the mapper <span className='links' onClick={() => dispatch(showSurvey())}>here</span>.
             </p>
 
             </div>
