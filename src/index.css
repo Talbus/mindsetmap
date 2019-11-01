@@ -739,7 +739,7 @@ textarea:focus {
 }
 
 .researcher {
-	width: 25%;
+	width: 60%;
 	min-height: 275px;
 	background-color: #063C31;
 	/* background-color: #5BC8B2; */
@@ -989,10 +989,11 @@ textarea::-webkit-input-placeholder {
 		margin-bottom: 12px;
 	}
 	.researcher {
-		width: 50%;
+		width: 80%;
+		padding: 24px;
 	}
 	.assistant {
-		width: 50%;
+		width: 80%;
 	}
 	.allAssistants {
 		flex-wrap: nowrap;
