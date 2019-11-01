@@ -66,7 +66,7 @@ const App = props => {
 					</Link>
 				</div>
 			</div>
-			<div id='main'>
+			<div id='main' onClick={closeNav}>
 				<div className='navBar'>
 					<div className='navbarLeftDiv' />
 					<Link to='/' onClick={() => window.scrollTo(0, 0)} className='navLogo'>Mindset Map</Link>
