@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 // import './App.css';
 import Select from 'react-select';
 import { useSelector, useDispatch } from 'react-redux';
-import { response, showSurvey, question } from '../actions';
+import { response, showSurvey, question, chooseSurvey } from '../actions';
 import Associations from './Associations';
 
 function Survey(props) {
@@ -21,6 +21,8 @@ function Survey(props) {
     const resp = useSelector(state => state.response);
     const ques = useSelector(state => state.question);
 
+    const chosenSurvey = useSelector(state => state.chooseSurvey);
+
     const dispatch = useDispatch();
 
     // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
@@ -33,14 +35,10 @@ function Survey(props) {
 	const handleChange = (selectedValue) => {
         setSelected(selectedValue);
         dispatch(question(selectedValue.value));
-        // console.log(ques, 'ques');
-        // console.log(`Option selected:`, selected);
-        // console.log(selectedValue.value, 'selval');
-        // console.log(ques.response[0].payload);
+        console.log(selected.value);
     };
 
     const textChange = (e) => {
-        // dispatch(response(e.target.value.toLowerCase()));
         setSeeAssociations(false);
         dispatch(response(e.target.value));
         setResponse(e.target.value);
@@ -49,12 +47,10 @@ function Survey(props) {
     };
 
     const exampleChange = (ex) => {
-        // setSeeAssociations(false);
         dispatch(response(examples[ex]));
         setCachedResponse(responseText);
         setResponse(examples[ex]);
-        example === 0 ? setExample(1) : setExample(0);
-        // setShowClear(false);
+        example === 5 ? setExample(0) : setExample(example + 1);
     };
 
 	const customStyles = {
@@ -118,10 +114,10 @@ function Survey(props) {
         setSeeAssociations(true);
         scrollToRef(myRef);
     }
-    // <button onClick={() => dispatch(showSurvey())}>ss</button>
 
     const nextPage = () => {
-        dispatch(showSurvey());
+        dispatch(chooseSurvey('toi'));
+        console.log(chosenSurvey);
         window.scrollTo(0,0);
     }
 
@@ -131,22 +127,31 @@ function Survey(props) {
     const textArea = selected === 0 ? 'responseField cursorNotAllowed' : 'responseField';
     // changing the cursor when they shouldn't type
 
+    // const examples = [
+    //     'This person is curious about the world in a way like no other, and sets out to learn for the sake of learning, not just to study for a test.',
+    //     'I would describe them as intelligent, because they can articulate their thoughts quickly and eloquently. In addition, they seemingly grasp concepts and are able to apply them so readily.'
+    // ]
+
     const examples = [
-        'This person is curious about the world in a way like no other, and sets out to learn for the sake of learning, not just to study for a test.',
-        'I would describe them as intelligent, because they can articulate their thoughts quickly and eloquently. In addition, they seemingly grasp concepts and are able to apply them so readily.'
+        "I do think of myself as intelligent. When learning math and other subjects requiring graphs and numbers, I tend to pick up the concepts relatively quickly. I become comfortable with new information quickly and it really makes sense to me.",
+        "I like to believe that I am an intelligent person. I feel this way not just because of my grades in school or my position as a student at my university, but also because of the passion and effort I put into my endeavors. I have always had a strong desire to learn about the world around me, which drives me to explore topics out of my comfort zone.",
+        "In high school, I was in honors math class and received nearly 100s on all of the tests. When taking the tests, I would see the question and just know immediately how to answer it - the answer set would just flow naturally from me, rather than me struggling for a long time to eventually figure it out.",
+        "Hard work! (usually correlated with time, but not necessarily) People gain intelligence as they go through experiences. That's why in many cultures the elderly is admired -- because they've gone through many difficult situations and acquired knowledge that helps them make better choices.",
+        "This person is curious about the world in a way like no other, and sets out to learn for the sake of learning, not just to study for a test.",
+        "I would describe them as intelligent, because they can articulate their thoughts quickly and eloquently. In addition, they seemingly grasp concepts and are able to apply them so readily.",
     ]
     
-    const examples_yourself = [
+    const examplesZero = [
         "I do think of myself as intelligent. When learning math and other subjects requiring graphs and numbers, I tend to pick up the concepts relatively quickly. I become comfortable with new information quickly and it really makes sense to me.",
         "I like to believe that I am an intelligent person. I feel this way not just because of my grades in school or my position as a student at my university, but also because of the passion and effort I put into my endeavors. I have always had a strong desire to learn about the world around me, which drives me to explore topics out of my comfort zone.",
     ]
 
-    const examples_level = [
+    const examplesOne = [
         "In high school, I was in honors math class and received nearly 100s on all of the tests. When taking the tests, I would see the question and just know immediately how to answer it - the answer set would just flow naturally from me, rather than me struggling for a long time to eventually figure it out.",
         "Hard work! (usually correlated with time, but not necessarily) People gain intelligence as they go through experiences. That's why in many cultures the elderly is admired -- because they've gone through many difficult situations and acquired knowledge that helps them make better choices.",
     ]
 
-    const examples_someone = [
+    const examplesTwo = [
         "This person is curious about the world in a way like no other, and sets out to learn for the sake of learning, not just to study for a test.",
         "I would describe them as intelligent, because they can articulate their thoughts quickly and eloquently. In addition, they seemingly grasp concepts and are able to apply them so readily.",
     ]
@@ -171,6 +176,8 @@ function Survey(props) {
             setResponse('');
             setShowClear(false);
             dispatch(response(''));
+
+            setSelected(null);
         } else {
             setResponse(cachedResponse);
             setShowClear(true);
@@ -184,12 +191,7 @@ function Survey(props) {
 	return (
         // <div className='' style={{ width: '70%', marginTop: '50px' }}>
         <div className='' style={{ width: '100%', marginTop: '' }} ref={backUpRef}>
-            {/* <div className='content'> */}
-            <div>
-                {/* <div className='progressBar'> */}
-                    {/* progress bar */}
-                {/* </div> */}
-
+            {/* <div> */}
                 <div className='surveyArea'>
                     <h2 className='pageHeader'>Mapper</h2>
                     <h3 style={{ margin: '0', fontSize: '18px', width: '100%', fontWeight: '400', color: '#212934' }}>Choose a question from the dropdown and answer with a few sentences.</h3>
@@ -264,23 +266,14 @@ function Survey(props) {
                     </div>
 
                     <br />
-                    {/* <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '64px' }}> */}
-                        {/* <button className='secondaryButton appButton' onClick={() => exampleChange(example)}>Example</button> */}
-                        {/* <button className='primaryButton appButton' onClick={() => dispatch(response(responseText.toLowerCase()))}>Map it</button> */}
-                        {/* <button ref={myRef} className='primaryButton appButton greenColor' onClick={() => mapFunction()}>Map it</button> */}
-                    {/* </div> */}
-                    {/* <h1>{selected.label}</h1> */}
 
-                    {/* {(resp.response ? console.log(resp.response[0].payload) : ' ')} */}
-                    {/* {resp.response ? resp.response[0].payload : ''} */}
-                    {/* {resp.response ? <Associations /> : ''} */}
                     {seeAssociations && resp.response ? <Associations /> : <div style={{ height: '300px' }} />}
                     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                         {seeAssociations && resp.response ? backUpButton : ''}
                         {seeAssociations && resp.response ? nextButton : ''}
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
         </div>
     );
 }

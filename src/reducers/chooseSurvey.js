@@ -1,6 +1,6 @@
-const questionReducer = (state = 0, action) => {
+const chooseSurveyReducer = (state = 'init', action) => {
     switch(action.type) {
-        case 'EDIT_QUESTION':
+        case 'CHOOSE_SURVEY':
             return Object.assign({}, state, {
                 response: [
                     // ...state.response,
@@ -14,4 +14,4 @@ const questionReducer = (state = 0, action) => {
     }
 };
 
-export default questionReducer;
+export default chooseSurveyReducer;

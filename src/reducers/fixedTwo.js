@@ -1,9 +1,8 @@
-const questionReducer = (state = 0, action) => {
+const fixedTwoReducer = (state = 0, action) => {
     switch(action.type) {
-        case 'EDIT_QUESTION':
+        case 'EDIT_FIXED2':
             return Object.assign({}, state, {
                 response: [
-                    // ...state.response,
                     {
                     payload: action.payload,
                     }
@@ -14,4 +13,4 @@ const questionReducer = (state = 0, action) => {
     }
 };
 
-export default questionReducer;
+export default fixedTwoReducer;
