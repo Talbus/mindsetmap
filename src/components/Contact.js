@@ -6,9 +6,11 @@ import bridgette from '../images/bridgette.jpg';
 import sydney from '../images/sydney.jpg';
 import noah from '../images/noah.jpg';
 import tommy from '../images/tommy.jpg';
+import taylor from '../images/taylor.jpg';
 import twitter from '../images/twitter.png';
 import search from '../images/search.svg';
 import email from '../images/email.svg';
+
 
 // import Survey from './Survey';
 // import Results from './Results';
@@ -90,12 +92,12 @@ function Contact() {
                     <div className='contactDiv assistant'>
                         <img className='contactPhotos assistantPhoto' style={{ }} src={sydney} />
                         <p className='assistantName'>Sydney Albert</p>
-                        <p className='assistantExtra'>Class of 2020</p>
+                        <p className='assistantExtra'>Class of 2022</p>
                     </div>
                     <div className='contactDiv assistant'>
                         <img className='contactPhotos assistantPhoto' style={{ }} src={noah} />
                         <p className='assistantName'>Noah Schaffir</p>
-                        <p className='assistantExtra'>Class of 2020</p>
+                        <p className='assistantExtra'>Class of 2021</p>
                     </div>
                     <div className='contactDiv assistant'>
                         <img className='contactPhotos assistantPhoto' style={{ }} src={tommy} />
@@ -103,7 +105,7 @@ function Contact() {
                         <p className='assistantExtra'>Class of 2020</p>
                     </div>
                     <div className='contactDiv assistant'>
-                        <img className='contactPhotos assistantPhoto' style={{ }} src={tommy} />
+                        <img className='contactPhotos assistantPhoto' style={{ }} src={taylor} />
                         <p className='assistantName'>Taylor Albus</p>
                         <p className='assistantExtra'>Class of 2020</p>
                     </div>
