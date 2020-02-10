@@ -21,7 +21,7 @@ function About() {
 
             </div>
             <div className='aboutBodyDiv'>
-                <h1 className='aboutHeader'>What is a Growth Mindset?</h1>
+                <h1 className='aboutHeader'>What is a Growth Mindset??</h1>
                 <p style={{ color: '#BEF9F3', fontSize: '20px', fontStyle: 'italic', margin: '8px 0'}} className='aboutBodyText'>What people believe about intelligence has far-reaching consequences.</p>
                 <p style={{ color: '#DFFCF6', marginTop: '2px' }} className='justify aboutBodyText'><span className='bold'>A growth mindset is the belief that intelligence can be developed through effort and experience. </span>Students with a growth mindset understand they can get smarter through hard work, the use of effective strategies, and help from others when needed. It is contrasted with a fixed mindset: the belief that intelligence is a fixed trait that is set in stone at birth. Students with a fixed mindset tend to fixate on performance metrics like grades as being reflective of their level of intelligence.</p>
         
