@@ -7,6 +7,7 @@ import sydney from '../images/sydney.jpg';
 import noah from '../images/noah.jpg';
 import tommy from '../images/tommy.jpg';
 import taylor from '../images/taylor.jpg';
+import ceren from '../images/ceren.jpg';
 import twitter from '../images/twitter.png';
 import search from '../images/search.svg';
 import email from '../images/email.svg';
@@ -101,12 +102,17 @@ function Contact() {
                     </div>
                     <div className='contactDiv assistant'>
                         <img className='contactPhotos assistantPhoto' style={{ }} src={tommy} />
-                        <p className='assistantName'>Tommy O'Conner</p>
+                        <p className='assistantName'>Tommy O'Connor</p>
                         <p className='assistantExtra'>Class of 2020</p>
                     </div>
                     <div className='contactDiv assistant'>
                         <img className='contactPhotos assistantPhoto' style={{ }} src={taylor} />
                         <p className='assistantName'>Taylor Albus</p>
+                        <p className='assistantExtra'>Class of 2020</p>
+                    </div>
+                    <div className='contactDiv assistant'>
+                        <img className='contactPhotos assistantPhoto' style={{ }} src={ceren} />
+                        <p className='assistantName'>Ceren Ebrem</p>
                         <p className='assistantExtra'>Class of 2020</p>
                     </div>
                 </div>

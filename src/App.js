@@ -20,8 +20,6 @@ const App = props => {
 	const openNav = () => {
 		setSideNav(true);
 		document.getElementById('sideNav').style.width = '200px';
-		// document.getElementById('main').style.marginRight = '250px';
-		// document.getElementById('main').style.marginLeft = '-250px';
 	}
 
 	const scrollTop = () => {
@@ -32,8 +30,6 @@ const App = props => {
 	const closeNav = () => {
 		setSideNav(false);
 		document.getElementById('sideNav').style.width = '0';
-		// document.getElementById('main').style.marginRight= '0';
-		// document.getElementById('main').style.marginRight= '0';
 
 	}
 

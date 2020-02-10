@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 // import './App.css';
 import Select from 'react-select';
 import { useSelector, useDispatch } from 'react-redux';
-import { response, showSurvey, question, fixedOne, fixedTwo, growthOne, growthTwo } from '../actions';
+import { fixedOne, fixedTwo, growthOne, growthTwo } from '../actions';
 
 function RadioToi(props) {
 

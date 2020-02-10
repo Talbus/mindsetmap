@@ -35,7 +35,7 @@ function Survey(props) {
 	const handleChange = (selectedValue) => {
         setSelected(selectedValue);
         dispatch(question(selectedValue.value));
-        console.log(selected.value);
+        // console.log(selected.value);
     };
 
     const textChange = (e) => {
@@ -122,7 +122,7 @@ function Survey(props) {
     }
 
     const nextButton = <button onClick={nextPage} style={{ marginTop: '36px' }} className='nextButton primaryButton appButton blueColor'>Next</button>;
-    const backUpButton = <button style={{ marginTop: '36px', marginRight: '12px' }} className='appButton backUpButton' onClick={() => window.scrollTo(0, 0)}>Try again</button>
+    const backUpButton = <button style={{ marginTop: '36px', marginRight: '12px' }} className='appButton backUpButton' onClick={() => tryAgain()}>Try again</button>
 
     const textArea = selected === 0 ? 'responseField cursorNotAllowed' : 'responseField';
     // changing the cursor when they shouldn't type
@@ -183,6 +183,15 @@ function Survey(props) {
             setShowClear(true);
             dispatch(response(cachedResponse));
         }
+    }
+
+    const tryAgain = () => {
+        setResponse('');
+        dispatch(response(''));
+        setSelected(null);
+        window.scrollTo(0,0);
+        setSeeAssociations(false);
+
     }
 
     const clearAndUndo = showClear ? <button className='clearButton' onClick={() => clearText('clear')}>Clear</button> : <button className='clearButton' onClick={() => clearText('undo')}>Undo</button>

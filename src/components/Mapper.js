@@ -3,6 +3,7 @@ import Survey from './Survey';
 import Results from './Results';
 import ToiSurvey from './ToiSurvey';
 import RadioToi from './RadioToi';
+import Intro from './Intro';
 import { useSelector, useDispatch } from 'react-redux';
 import { response, showSurvey, chooseSurvey } from '../actions';
 import circle from '../images/timelineCircle.svg';
@@ -20,7 +21,7 @@ function Mapper() {
     const resp = useSelector(state => state.response);
     
     const [loaded, setLoaded] = useState(false);
-    const [dest, setDest] = useState('mapper');
+    const [dest, setDest] = useState('intro');
 
     const canLoad = chosenSurvey !== 'init';
 
@@ -37,9 +38,9 @@ function Mapper() {
     const showMapper = (source) => {
         setLoaded(true);
         setDest(source);
-        if (displaySurvey && source === 'results' || !displaySurvey && source === 'mapper') {
-            dispatch(showSurvey());
-        }
+        // if (displaySurvey && source === 'results' || !displaySurvey && source === 'mapper') {
+        //     dispatch(showSurvey());
+        // }
         // dispatch(showSurvey());
         window.scrollTo(0,0);
         dispatch(chooseSurvey(source));
@@ -49,20 +50,19 @@ function Mapper() {
     return (
         <div className='allMapper' style={{ width: '100%', marginBottom: '50px', backgroundColor: 'white' }}>
             
-            {/* <button style={{ position: 'absolute', zIndex: '5', opacity: '0' }} onClick={() => dispatch(showSurvey())}>switch</button> */}
             <div className='content'>
                 <div className='progressBar'>
-                    {/* {chosenSurvey.response ? console.log(chosenSurvey.response[0].payload.toLowerCase()) : 'hi'} */}
                     {/* progress bar */}
+                    <div className='timelineDiv' onClick={() => showMapper('intro')}>
+                        <img src={circle} className={dest == 'intro' ? 'timelineCircle' : 'timelineCircle circleOpacity'} />
+                        <p className='timelineText'>Start</p>
+                    </div>
                     <div className='timelineDiv' onClick={() => showMapper('mapper')}>
-                        {/* <img src={circle} className={displaySurvey ? 'timelineCircle' : 'timelineCircle circleOpacity'} /> */}
                         <img src={circle} className={dest == 'mapper' ? 'timelineCircle' : 'timelineCircle circleOpacity'} />
-                        {/* <img src={circle} className='timelineCircle' /> */}
                         <p className='timelineText'>Mapper</p>
                     </div>
                     <div className='timelineDiv' onClick={() => showMapper('toi')}>
                         <img src={circle} className={dest == 'toi' ? 'timelineCircle' : 'timelineCircle circleOpacity'} />
-                        {/* <img src={circle} className='timelineCircle' /> */}
                         <p className='timelineText'>Survey</p>
                     </div>
                     <div className='timelineDiv' onClick={() => showMapper('results')}>
@@ -70,11 +70,9 @@ function Mapper() {
                         <p className='timelineText'>Results</p>
                     </div>
                 </div>
-                {/* {dest == 'mapper' ? <Survey /> : dest == 'toi' ? <ToiSurvey /> : <Results />} */}
-                {!canLoad ? <Survey /> : chosenSurvey.response[0].payload === 'mapper' ? <Survey /> : chosenSurvey.response[0].payload === 'toi' ? <ToiSurvey /> : <Results />}
+                {!canLoad ? <Intro /> : chosenSurvey.response[0].payload === 'intro' ? <Intro /> : chosenSurvey.response[0].payload === 'mapper' ? <Survey /> : chosenSurvey.response[0].payload === 'toi' ? <ToiSurvey /> : <Results />}
             </div>
         </div>
-        // <Survey />
 
     );
 }

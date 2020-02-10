@@ -5,20 +5,33 @@ import HighchartsReact from 'highcharts-react-official';
 // import {
 //     HighchartsChart, Chart, withHighcharts, XAxis, YAxis, Title, Subtitle, Legend, ScatterSeries, Series
 //   } from 'react-jsx-highcharts';
-import bellcurve from 'highcharts/modules/histogram-bellcurve';
+// import bellcurve from 'highcharts/modules/histogram-bellcurve';
 
-require('highcharts/modules/histogram-bellcurve')(Highcharts);
+// require('highcharts/modules/histogram-bellcurve')(Highcharts);
 
 
 
 function ToiChart(props) {
 
-    const data = [1, 2];
+    // const data = [1, 2];
+
+    // const [toiValue, setToiValue] = useState(3);
+    
+    // const incre = () => {
+    //     toiValue < 6 ? setToiValue(toiValue + .25) : setToiValue(1);
+    // }
+
+    const shiftedScore = (score) => {
+        // const shifted = score/4;
+        const shifted = Math.floor(score/4);
+        return (shifted == 6 ? 5.9 : shifted);
+    }
+
 
     const options = {
 
         title: {
-            text: 'Theory of Intelligence'
+            text: ''
         },
         tooltip: {
             enabled: false,
@@ -27,105 +40,83 @@ function ToiChart(props) {
             enabled: false,
         },
         chart: {
-            height: 250,
+            type: 'column',
+            height: 325,
             plotBackgroundColor: '#F8F9FA',
             backgroundColor: '#F8F9FA',
+            pointWidth: 200,
+            marginBottom: 100,
+            // paddingBottom: 50,
+            // width: 200,
+
         },
 
         xAxis: [{
-            categories: ['null', 'null', 'Fixed', 'Mixed', 'Growth'],
-            // tickInterval: 2,
+            type: 'category',
+            categories: ['Strong Fixed', 'Leaning Fixed', 'Mixed', 'Leaning Growth', 'Strong Growth'],
             labels: {
-                step: 1,
-            },
-            plotLines: [{
-                color: '#6CDAC4',
-                width: 20,
-                value: props.score/4,
-                zIndex: 5,
-            }],
-            // opposite: true,
+                style: {
+                    fontSize: '14px'
+                },
+                // step: 2,
+            }
         }],
         yAxis: [{
+            min: 0,
+            title: {
+                text: 'Your TOI'
+            },
             visible: false,
         }],
         series: [{
-            type: 'bellcurve',
-            intervals: 3,
-            pointsInInterval: 5,
-            xAxis: 0,
-            yAxis: 0,
-            baseSeries: 1,
-            pointStart: 0,
-            color: '#FFE3A3',
-            fillOpacity: 0.5,
+            name: 'TOI Score',
+            data: [
+            ['a', 4],
+            ['b', 8],
+            ['c', 13],
+            ['d', 8],
+            ['e', 4],
 
-        }, {
-            data: [3.5, 3, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.4, 3, 3, 4,
-                4.4, 3.9, 3.5, 3.8, 3.8, 3.4, 3.7, 3.6, 3.3, 3.4, 3, 3.4, 3.5, 3.4, 3.2,
-                3.1, 3.4, 4.1, 4.2, 3.1, 3.2, 3.5, 3.6, 3, 3.4, 3.5, 2.3, 3.2, 3.5, 3.8, 3,
-                3.8, 3.2, 3.7, 3.3, 3.2, 3.2, 3.1, 2.3, 2.8, 2.8, 3.3, 2.4, 2.9, 2.7, 2, 3,
-                2.2, 2.9, 2.9, 3.1, 3, 2.7, 2.2, 2.5, 3.2, 2.8, 2.5, 2.8, 2.9, 3, 2.8, 3,
-                2.9, 2.6, 2.4, 2.4, 2.7, 2.7, 3, 3.4, 3.1, 2.3, 3, 2.5, 2.6, 3, 2.6, 2.3,
-                2.7, 3, 2.9, 2.9, 2.5, 2.8, 3.3, 2.7, 3, 2.9, 3, 3, 2.5, 2.9, 2.5, 3.6,
-                3.2, 2.7, 3, 2.5, 2.8, 3.2, 3, 3.8, 2.6, 2.2, 3.2, 2.8, 2.8, 2.7, 3.3, 3.2,
-                2.8, 3, 2.8, 3, 2.8, 3.8, 2.8, 2.8, 2.6, 3, 3.4, 3.1, 3, 3.1, 3.1, 3.1, 2.7,
-                3.2, 3.3, 3, 2.5, 3, 3.4, 3],
-            visible: false,
-        }]
+            ],
+            // pointWidth: 50,
+            // color: '#FFE3A3',
+            zoneAxis: 'x',
+            zones: [{
+                value: shiftedScore(props.score) - 1.9,
+                color: '#FFE3A3'
+            },{
+                value: shiftedScore(props.score) - .5,
+                color: '#6CDAC4'
+            },{
+                color: '#FFE3A3'
+            }]
+            // visible: false,
+        }],
 
-    //     title: {
-    //       text: 'Bell curve'
-    //     },
-      
-    //     xAxis: [{
-    //       alignTicks: false
-    //     }, {
-    //     //   title: {
-    //     //     text: 'Bell curve'
-    //     //   },
-    //     categories: ['Fixed', 'Mixed', 'Growth'],
-    //     alignTicks: false,
-    //     opposite: true,
-    //     tickInterval: 1,
-    //     plotLines: [{
-    //         color: '#6CDAC4',
-    //         width: 20,
-    //         value: 3,
-    //         zIndex: 5,
-    //     }]
-    //     }],
-      
-    //     yAxis: [{
-    //     }, {
-    //     //   title: { text: 'Bell curve' },
-    //       opposite: true,
-    //       visible: false,
-    //     }],
-      
-    //     series: [{
-    //       name: 'Bell curve',
-    //       type: 'bellcurve',
-    //       xAxis: 1,
-    //       yAxis: 1,
-    //       baseSeries: 1,
-    //       zIndex: -1,
-    //       pointStart: 1,
-    //       color: '#FFE3A3',
-    //       fillOpacity: 0.5,
-    //     }, {
-    //     //   name: 'Data',
-    //       type: 'scatter',
-    //       data: data,
-    //       visible: false,
-    //       accessibility: {
-    //         exposeAsGroupOnly: true
-    //       },
-    //       marker: {
-    //         enable: false
-    //       },
-    //       color: 'rgb(2, 3, 4, 0.0)'
-    //     }]
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    plotOptions: {
+                        column: {
+                            pointWidth: 30,
+                            stacking: 'normal'
+                        }
+                    },
+                    xAxis: {
+                        labels: {
+                            rotation: -90,
+                            // step: 2,
+
+                        },
+                        
+                    }
+                },
+                
+            }]
+        }
       }
 
       
@@ -136,7 +127,12 @@ function ToiChart(props) {
             highcharts={Highcharts}
             options={options}
         />
-        {/* <p>{props.score / 4}</p> */}
+        {/* <button onClick={incre}>click</button> */}
+        {/* <p>{shiftedScore(toiValue)}</p> */}
+
+        {/* <p>{shiftedScore(props.score)}</p> */}
+        {/* <p>{props.score/4}</p> */}
+
         </div>
 
     );

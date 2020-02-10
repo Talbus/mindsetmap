@@ -401,10 +401,21 @@ button {
 }
 
 .surveyArea {
-	min-height: 400px;
+	min-height: 500px;
 	padding: 3% 5%;
 	background-color: #F8F9FA;
 	box-shadow: inset 0 1px 0 #F8F9FA, 0 2px 6px hsla(0, 0%, 0%, .2);
+}
+.introSurveyArea {
+	min-height: 500px;
+	padding: 3% 5%;
+	background-color: #DFFCF6;
+	background-color: #239A82;
+	opacity: .8;
+	border-left: solid;
+	border-color: #FFE3A3;
+	border-width: 10px;
+	/* box-shadow: inset 2px 2px 2px hsla(0, 0%, 0%, 0.1), 0 -2px 0 hsla(0, 0%, 100%, .15); */
 }
 
 .displayQuestion {
@@ -952,6 +963,48 @@ textarea:focus {
 	/* opacity: .8; */
 }
 
+.introText {
+	font-size: 18px;
+	width: 80%;
+	color: #DFFCF6;
+}
+.introArrowDiv {
+	flex-direction: row;
+	height: 175px;
+	margin-top: 48px;
+
+}
+.introArrow {
+	width: 20%;
+	position: relative;
+	/* width: 40%; */
+	height: 250px;
+	/* height: auto; */
+	display: flex;
+	justify-content: end;
+	flex-direction: column;
+	margin-top: -24px;
+}
+.arrowText {
+	font-size: 28px;
+	/* margin-top: 72px; */
+	margin: 0;
+	width: 80%;
+	text-align: center;
+	cursor: pointer;
+	/* margin-left: 25%; */
+	color: #FFE3A3;
+}
+.arrowText:hover {
+	color: #FFD67C;
+}
+.introArrowImage {
+	top: 0;
+}
+.introArrowImageTwo {
+	top: 0;
+}
+
 
 
 /* * { background-color: rgba(255,0,0,.2); }
@@ -989,7 +1042,7 @@ textarea::-webkit-input-placeholder {
   }
 
 
-@media (max-width: 699px) {
+@media only screen and (max-width: 699px) {
 	.pageHeader {
 		margin-top: 8px;
 	}
@@ -1207,13 +1260,49 @@ textarea::-webkit-input-placeholder {
 	}
 	.surveyArea {
 		padding: 1% 3%;
+		box-shadow: none;
 	}
 	.toiButtonText {
 		font-size: 12px;
 	}
+	.introSurveyArea {
+		border-style: none;
+		padding-bottom: 48px;
+	}
+	.introText {
+		width: 100%;
+	}
+	.introArrowDiv {
+		/* flex-direction: column; */
+		/* width: 50%; */
+		margin-top: 48px;
+		height: 150px;
+		/* background-color: #FFF3D6; */
+	}
+	.introArrow {
+		width: 10%;
+		padding-top: 24px;
+	}
+	.arrowText {
+		width: 35%;
+		font-size: 20px;
+		margin-left: 36px;
+		color: #FFE3A3
+	}
+	.arrowText:hover {
+		color: #FFD67C;
+	}
+	.introArrowImage {
+		width: 100px !important;
+		margin-bottom: -20px;
+	}
+	.introArrowImageTwo {
+		width: 100px !important;
+		margin-bottom: -20px;
+	}
 }
 
-@media (min-width: 700px) and (max-width: 1000px) {
+@media only screen and (min-width: 700px) and (max-width: 1000px) {
 	.researcherPhoto {
 		width: 100px;
 		height: 100px;

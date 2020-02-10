@@ -29,8 +29,8 @@ function ToiSurvey() {
         }
     }
 
-    const nButton = <button style={{ marginTop: '36px' }} className='nextButton primaryButton appButton blueColor' onClick={nextPage}>Next</button>
-    const blockedButton = <button style={{ marginTop: '36px' }} className='nextButton primaryButton appButton blockedToiButton cursorNotAllowed'>Next</button>
+    const nButton = <button style={{ marginTop: '36px' }} className='nextButton primaryButton appButton blueColor' onClick={nextPage}>Results</button>
+    const blockedButton = <button style={{ marginTop: '36px' }} className='nextButton primaryButton appButton blockedToiButton cursorNotAllowed'>Results</button>
     const nextButton = allAnswered ? nButton : blockedButton;
 
     
@@ -39,6 +39,7 @@ function ToiSurvey() {
         <div className='' style={{ width: '100%' }} ref={backUpRef}>
             <div className='surveyArea'>
                 <h2 className='pageHeader'>Survey</h2>
+                <h3 style={{ fontSize: '18px', fontWeight: '400', color: '#063C31' }}>In this section, rate how much you agree or disagree with these statements. <br />Go with your gut!</h3>
                 {/* {console.log(fixed1.response[0].payload)} */}
                 {/* <p>{fixed1.response}, {fixed2.response}, {growth1.response}, {growth2.response}</p> */}
                 {/* {fixed1.state ? console.log(fixed1.response[0].payload) : console.log()} */}
