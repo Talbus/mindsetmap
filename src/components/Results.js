@@ -38,13 +38,15 @@ function Results() {
     const fixedString = (fixedTerms.response ? <p className='usedWords' style={{ color: '#E69D00', marginBottom: '24px' }}>{fixedTerms.response[0].payload.join(', ')}</p> : '');
     
     const introText = <span style={{ fontSize: '16px', margin: '0', fontWeight: '100' }}>
-        The Mapper and Survey are two ways to explore what you believe about intelligence.<br /> <br />You might believe that intelligence is something fixed that you can't influence. Alternatively, you might believe that intelligence can be grown through effort. Or, you may be somewhere in the middle.
+        The Mapper and Survey are two ways to explore what you believe about intelligence.
+        {/* <br /><br />You might believe that intelligence is something fixed that you can't influence. Alternatively, you might believe that intelligence can be grown through effort. Or, you may be somewhere in the middle.
         <br /><br />
         The Mapper helps you explore your beliefs about intelligence by lorem ipsum.
-        <br />
+        <br /> */}
 
         </span>
-        
+    
+
     const fixedWords = <span style={{ color: '', fontSize: '16px' }}>These words you used indicate more of a <span style={{ color: '#BD8100' }}>fixed mindset</span> about intelligence:</span>
     const growthWords = <span style={{ color: '', fontSize: '16px' }}><br />These words you used indicate more of a <span style={{ color: '#239A82' }}>growth mindset</span> about intelligence:</span>
 
@@ -56,8 +58,11 @@ function Results() {
         <div style={{ width: '100%' }}>
             <div className='surveyArea'>
                 <h2 className='pageHeader'>Results</h2>
-                <p style={{ color: '#063C31', width: '90%', margin: '0' }}>{(growthTerms.response && growthTerms.response[0].payload.length) || (fixedTerms.response && fixedTerms.response[0].payload.length) > 0 ? (introText) : ''}</p>
-
+                {/* <p style={{ color: '#063C31', width: '90%', margin: '0' }}>{(growthTerms.response && growthTerms.response[0].payload.length) || (fixedTerms.response && fixedTerms.response[0].payload.length) > 0 ? (introText) : ''}</p> */}
+                <p style={{ color: '#063C31', width: '90%', margin: '0' }}>{introText}</p>
+                <p style={{ color: '#063C31', width: '70%', borderStyle: 'none none none solid', borderColor: '#FFE3A3', borderWidth: '8px', marginLeft: '0', paddingLeft: '8px' }}>You might believe that intelligence is something fixed that you can't influence. Alternatively, you might believe that intelligence can be grown through effort. Or, you may be somewhere in the middle.
+        <br /><br />
+        The Mapper helps you explore your beliefs about intelligence by lorem ipsum.</p>
                 {(growthTerms.response && growthTerms.response[0].payload.length) ? growthWords : ''}
                 {growthTerms.response ? growthString : ''}
 
