@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/mindsetmap/static/css/main.bd60b0aa.chunk.css",
+    "main.js": "/mindsetmap/static/js/main.47f8dc2d.chunk.js",
+    "main.js.map": "/mindsetmap/static/js/main.47f8dc2d.chunk.js.map",
+    "runtime~main.js": "/mindsetmap/static/js/runtime~main.5c5cfdad.js",
+    "runtime~main.js.map": "/mindsetmap/static/js/runtime~main.5c5cfdad.js.map",
+    "static/js/2.41a54d2a.chunk.js": "/mindsetmap/static/js/2.41a54d2a.chunk.js",
+    "static/js/2.41a54d2a.chunk.js.map": "/mindsetmap/static/js/2.41a54d2a.chunk.js.map",
+    "index.html": "/mindsetmap/index.html",
+    "precache-manifest.47cb1f76b0b475148fb5281893404a86.js": "/mindsetmap/precache-manifest.47cb1f76b0b475148fb5281893404a86.js",
+    "service-worker.js": "/mindsetmap/service-worker.js",
+    "static/css/main.bd60b0aa.chunk.css.map": "/mindsetmap/static/css/main.bd60b0aa.chunk.css.map",
+    "static/media/brenda.png": "/mindsetmap/static/media/brenda.23adfcf1.png",
+    "static/media/bridgette.jpg": "/mindsetmap/static/media/bridgette.ff0c25a2.jpg",
+    "static/media/ceren.jpg": "/mindsetmap/static/media/ceren.0ee07b83.jpg",
+    "static/media/christina.jpg": "/mindsetmap/static/media/christina.6119901c.jpg",
+    "static/media/email.svg": "/mindsetmap/static/media/email.017a6c9f.svg",
+    "static/media/hamburger.svg": "/mindsetmap/static/media/hamburger.037910e6.svg",
+    "static/media/hamburgerGreen.svg": "/mindsetmap/static/media/hamburgerGreen.5c6ea565.svg",
+    "static/media/noah.jpg": "/mindsetmap/static/media/noah.7c0e5d68.jpg",
+    "static/media/search.svg": "/mindsetmap/static/media/search.85d6d126.svg",
+    "static/media/sidearrow.svg": "/mindsetmap/static/media/sidearrow.3c1e7b17.svg",
+    "static/media/sidearrow2.svg": "/mindsetmap/static/media/sidearrow2.a5dccadb.svg",
+    "static/media/sydney.jpg": "/mindsetmap/static/media/sydney.260d4297.jpg",
+    "static/media/taylor.jpg": "/mindsetmap/static/media/taylor.7f3f14dd.jpg",
+    "static/media/timelineCircle.svg": "/mindsetmap/static/media/timelineCircle.b5e987de.svg"
+  }
+}
