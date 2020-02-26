@@ -32,7 +32,7 @@ function Intro() {
                     <p className='introText'>The navigation bar will let you switch between the different pages, so if you want to go back to something, you always can.</p>
                 {/* </div> */}
                 <div className='introArrowDiv' style={{ display: 'flex' }}>
-                    <p className='arrowText' style={{ backgroundColor: 'green' }} onClick={() => loadPage('mapper')}>Let's get started</p>
+                    <p className='arrowText' onClick={() => loadPage('mapper')}>Let's get started</p>
                     {/* <div className='introArrow' onClick={() => loadPage('mapper')}>
                         <img src={altsidearrow} className='arrowImage introArrowImage' />
                         <img src={altsidearrow2} className='arrowImageTwo introArrowImageTwo' />
