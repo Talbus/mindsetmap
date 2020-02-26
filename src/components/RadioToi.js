@@ -9,7 +9,7 @@ function RadioToi(props) {
     const dispatch = useDispatch();
     const dest = props.destination;
 
-    const backUpRef = useRef(null);
+    // const backUpRef = useRef(null);
 
     const [selected, setSelected] = useState(-1);
 
