@@ -37,7 +37,7 @@ function Results() {
     const growthString = (growthTerms.response ? <p className='usedWords' style={{ color: '#5BC8B2' }}>{growthTerms.response[0].payload.join(', ')}</p> : '');
     const fixedString = (fixedTerms.response ? <p className='usedWords' style={{ color: '#E69D00', marginBottom: '24px' }}>{fixedTerms.response[0].payload.join(', ')}</p> : '');
     
-    const introText = <span style={{ fontSize: '16px', margin: '0', fontWeight: '100' }}>
+    const introText = <span className='resultsBody' style={{ fontSize: '16px', margin: '0', fontWeight: '100' }}>
         The Mapper and Survey are two ways to explore what you believe about intelligence.
         {/* <br /><br />You might believe that intelligence is something fixed that you can't influence. Alternatively, you might believe that intelligence can be grown through effort. Or, you may be somewhere in the middle.
         <br /><br />
@@ -47,8 +47,8 @@ function Results() {
         </span>
     const basedText = <p className='resultsText' style={{ fontStyle: ''}}>Based on your language choices, do you have more of a fixed or growth mindset about intelligence?</p>
 
-    const fixedWords = <span style={{ color: '', fontSize: '16px' }}>These words you used indicate more of a <span style={{ color: '#BD8100' }}>fixed mindset</span> about intelligence:</span>
-    const growthWords = <span style={{ color: '', fontSize: '16px' }}><br />These words you used indicate more of a <span style={{ color: '#239A82' }}>growth mindset</span> about intelligence:</span>
+    const fixedWords = <span className='resultsBody' style={{ color: '', fontSize: '16px' }}>These words you used indicate more of a <span style={{ color: '#BD8100' }}>fixed mindset</span> about intelligence:</span>
+    const growthWords = <span className='resultsBody' style={{ color: '', fontSize: '16px' }}><br />These words you used indicate more of a <span style={{ color: '#239A82' }}>growth mindset</span> about intelligence:</span>
 
     const secondIntroText = <span style={{ fontSize: '18px', margin: '0' }}>These words you used indicate more of a <span style={{ color: '#BD8100' }}>Fixed mindset:</span> </span>;
     const gMindset = <span style={{ color: '#239A82' }}>Growth mindset</span>;
@@ -59,7 +59,7 @@ function Results() {
             <div className='surveyArea'>
                 <h2 className='pageHeader'>Results</h2>
                 {/* <p style={{ color: '#063C31', width: '90%', margin: '0' }}>{(growthTerms.response && growthTerms.response[0].payload.length) || (fixedTerms.response && fixedTerms.response[0].payload.length) > 0 ? (introText) : ''}</p> */}
-                <p style={{ color: '#063C31', width: '90%', margin: '0' }}>{introText}</p>
+                <p className='resultsBody' style={{ color: '#063C31' }}>{introText}</p>
                 <p className='resultsText'>You might believe that intelligence is something fixed that you can't influence. Alternatively, you might believe that intelligence can be grown through effort. Or, you may be somewhere in the middle.
         <br /><br />
         The Mapper helps you explore your beliefs about intelligence by lorem ipsum.
@@ -80,7 +80,7 @@ function Results() {
                 {/* </p> */}
                 {allAnswered ? <p style={{ color: '#063C31'}}>The graph below shows where you fall on a range from fixed to growth. As you can see, most people fall somewhere in the middle.</p> : ''}
                 {allAnswered ? <ToiChart score={fixed1.response[0].payload + fixed2.response[0].payload + growth1.response[0].payload + growth2.response[0].payload} /> : ''}
-                <p style={{ fontSize: '16px', width: '90%', marginTop: '0', color: '#063C31', lineHeight: '1.25' }}>
+                <p className='resultsBody' style={{ fontSize: '16px', color: '#063C31', lineHeight: '1.25' }}>
                     To learn more about what these results mean, visit our <Link to='/about' className='links'>About</Link> page, and if you're interested in speaking to us more, do not hesitate to <Link to='/contact' className='links'>reach out</Link>!<br /><br />Go back to the mapper <span className='links' onClick={() => restart()}>here</span>.
                 </p>
             </div>

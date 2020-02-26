@@ -1050,6 +1050,9 @@ textarea:focus {
 	border-radius: 3px;
 	/* margin-left: 12px; */
 }
+.resultsBody {
+	width: 90%;
+}
 
 
 
@@ -1352,6 +1355,16 @@ textarea::-webkit-input-placeholder {
 	.introButton {
 		width: 80%;
 	}
+	.resultsText {
+		margin: 0 auto;
+		width: 80%;
+	}
+	.resultsBody {
+		/* width: 100%; */
+		width: 95%;
+		margin-right: 4px;
+	}
+	
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1000px) {
