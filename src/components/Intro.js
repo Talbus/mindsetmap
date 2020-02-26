@@ -33,10 +33,10 @@ function Intro() {
                 {/* </div> */}
                 <div className='introArrowDiv' style={{ display: 'flex' }}>
                     <p className='arrowText' onClick={() => loadPage('mapper')}>Let's get started</p>
-                    <div className='introArrow' onClick={() => loadPage('mapper')}>
+                    {/* <div className='introArrow' onClick={() => loadPage('mapper')}>
                         <img src={altsidearrow} className='arrowImage introArrowImage' />
                         <img src={altsidearrow2} className='arrowImageTwo introArrowImageTwo' />
-                    </div>
+                    </div> */}
                 </div>
                     
             </div>
