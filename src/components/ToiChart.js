@@ -1,25 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-// import addHistogramModule from 'highcharts/modules/histogram-bellcurve';
-// import {
-//     HighchartsChart, Chart, withHighcharts, XAxis, YAxis, Title, Subtitle, Legend, ScatterSeries, Series
-//   } from 'react-jsx-highcharts';
-// import bellcurve from 'highcharts/modules/histogram-bellcurve';
-
-// require('highcharts/modules/histogram-bellcurve')(Highcharts);
 
 
 
 function ToiChart(props) {
-
-    // const data = [1, 2];
-
-    // const [toiValue, setToiValue] = useState(3);
-    
-    // const incre = () => {
-    //     toiValue < 6 ? setToiValue(toiValue + .25) : setToiValue(1);
-    // }
 
     const shiftedScore = (score) => {
         // const shifted = score/4;

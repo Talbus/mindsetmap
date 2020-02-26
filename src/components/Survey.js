@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 // import './App.css';
 import Select from 'react-select';
 import { useSelector, useDispatch } from 'react-redux';
-import { response, showSurvey, question, chooseSurvey } from '../actions';
+import { response, question, chooseSurvey } from '../actions';
 import Associations from './Associations';
 
 function Survey(props) {

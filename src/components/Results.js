@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { response, growthWords, fixedWords, showSurvey, question, chooseSurvey, fixedOne, fixedTwo, growthOne, growthTwo  } from '../actions';
-import Associations from './Associations';
+import { response, question, chooseSurvey, fixedOne, fixedTwo, growthOne, growthTwo  } from '../actions';
+// import Associations from './Associations';
 import { Link } from 'react-router-dom';
 import ToiChart from './ToiChart';
 

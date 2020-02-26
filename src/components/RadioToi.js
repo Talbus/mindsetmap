@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 // import './App.css';
-import Select from 'react-select';
-import { useSelector, useDispatch } from 'react-redux';
+// import Select from 'react-select';
+import { useDispatch } from 'react-redux';
 import { fixedOne, fixedTwo, growthOne, growthTwo } from '../actions';
 
 function RadioToi(props) {

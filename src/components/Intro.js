@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { response, growthWords, fixedWords, showSurvey, chooseSurvey } from '../actions';
-import { Link } from 'react-router-dom';
-import altsidearrow from '../images/altsidearrow1.svg';
-import altsidearrow2 from '../images/altsidearrow2.svg';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { chooseSurvey } from '../actions';
+// import { Link } from 'react-router-dom';
+// import altsidearrow from '../images/altsidearrow1.svg';
+// import altsidearrow2 from '../images/altsidearrow2.svg';
 
 function Intro() {
 

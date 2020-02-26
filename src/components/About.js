@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Survey from './Survey';
-import Results from './Results';
-import { useSelector, useDispatch } from 'react-redux';
-import { response, showSurvey } from '../actions';
+// import Survey from './Survey';
+// import Results from './Results';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { response, showSurvey } from '../actions';
 
 
 

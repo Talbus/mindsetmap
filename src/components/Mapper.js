@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import Survey from './Survey';
 import Results from './Results';
 import ToiSurvey from './ToiSurvey';
-import RadioToi from './RadioToi';
+// import RadioToi from './RadioToi';
 import Intro from './Intro';
 import { useSelector, useDispatch } from 'react-redux';
-import { response, showSurvey, chooseSurvey } from '../actions';
+import { chooseSurvey } from '../actions';
 import circle from '../images/timelineCircle.svg';
 
 
@@ -33,7 +33,7 @@ function Mapper() {
         if (canLoad) {
             setDest(chosenSurvey.response[0].payload);
         }
-    });
+    }, [chosenSurvey, canLoad]);
 
     const showMapper = (source) => {
         setLoaded(true);

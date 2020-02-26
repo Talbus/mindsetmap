@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 // import './App.css';
-import Select from 'react-select';
+// import Select from 'react-select';
 import { useSelector, useDispatch } from 'react-redux';
-import { response, showSurvey, question, chooseSurvey } from '../actions';
+import { chooseSurvey } from '../actions';
 import RadioToi from './RadioToi';
 
 function ToiSurvey() {

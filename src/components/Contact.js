@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import brenda from '../images/brenda.png';
 import christina from '../images/christina.jpg';
 import bridgette from '../images/bridgette.jpg';

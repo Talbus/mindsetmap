@@ -1,6 +1,6 @@
-import React, { useRef, useState , useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import arrow from '../images/arrow.svg';
+// import arrow from '../images/arrow.svg';
 import sidearrow from '../images/sidearrow.svg';
 import sidearrow2 from '../images/sidearrow2.svg';
 // import arrowOpacity from '../images/arrowOpacity.svg';
