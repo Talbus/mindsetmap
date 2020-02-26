@@ -31,13 +31,17 @@ function Intro() {
                     <p className='introText'>You aren't required to do both, but we believe the best results come from doing both.</p>
                     <p className='introText'>The navigation bar will let you switch between the different pages, so if you want to go back to something, you always can.</p>
                 {/* </div> */}
-                <div className='introArrowDiv' style={{ display: 'flex' }}>
-                    <p className='arrowText' onClick={() => loadPage('mapper')}>Let's get started</p>
+                <div className='introButtonDiv'>
+                    <div className='introFillDiv' />
+                    <button className='appButton introButton' onClick={() => loadPage('mapper')}>Let's get started</button>
+                </div>
+                {/* <div className='introArrowDiv' style={{ display: 'flex' }}> */}
+                    {/* <button className='arrowText' onClick={() => loadPage('mapper')}>Let's get started</button> */}
                     {/* <div className='introArrow' onClick={() => loadPage('mapper')}>
                         <img src={altsidearrow} className='arrowImage introArrowImage' />
                         <img src={altsidearrow2} className='arrowImageTwo introArrowImageTwo' />
                     </div> */}
-                </div>
+                {/* </div> */}
                     
             </div>
         </div>
